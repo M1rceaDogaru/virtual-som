@@ -1,0 +1,15 @@
+﻿@model VirtualSom.Web.Models.IndexViewModel
+@{
+    ViewData["Title"] = "Suggest me some wine";
+}
+
+<div class="text-center">
+    @using (Html.BeginForm(FormMethod.Get)) { 
+        <p>Describe to me the kind of wine you desire and I will tell you what variety it should be and what region to come from</p>
+        @Html.TextBoxFor(m => m.Description)
+        <input type="submit" value="Suggest me!" />
+        <p>
+            @Html.DisplayTextFor(m => m.Suggestion)
+        </p>
+    }
+</div>
